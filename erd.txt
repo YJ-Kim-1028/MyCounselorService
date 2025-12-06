@@ -1,0 +1,56 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table agent {
+  agentId varchar [primary key]
+  password varchar [not null]
+  name varchar [not null]
+  team varchar [not null]
+  region varchar [not null]
+  role varchar [not null]
+  activeYn char [not null]
+  crdDate datetime [not null]
+  updDate datetime [not null]
+}
+
+Table customer {
+  customerId varchar [primary key]
+  name varchar [not null]
+  phone varchar [not null]
+  grade varchar
+  zip varchar 
+  address varchar
+  crdDate datetime [not null]
+  updDate datetime [not null]
+}
+
+Table consult {
+  consultId varchar [primary key]
+  agentId varchar [not null]
+  customerId varchar [not null]
+  status varchar [not null]
+  channel varchar 
+  title varchar [not null]
+  summary text [note: 'Content of the consulting', not null]
+  stdDate datetime [not null]
+  endDate datetime [not null]
+  crdDate datetime [not null]
+  updDate datetime [not null]
+}
+
+Ref: agent.agentId < consult.agentId
+Ref: customer.customerId < consult.customerId
+
+Table tag {
+  tagId varchar [primary key]
+  name varchar [not null]
+  crdDate datetime [not null]
+}
+
+Table consultTag {
+  consultId varchar [primary key]
+  tagId varchar [primary key]
+}
+
+Ref: consult.consultId < consultTag.consultId
+Ref: tag.tagId < consultTag.tagId

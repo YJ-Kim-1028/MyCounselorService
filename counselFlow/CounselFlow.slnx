@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CounselFlow.Api/CounselFlow.Api.csproj" />
+    <Project Path="src/CounselFlow.Application/CounselFlow.Application.csproj" />
+    <Project Path="src/CounselFlow.Domain/CounselFlow.Domain.csproj" />
+    <Project Path="src/CounselFlow.Infrastructure/CounselFlow.Infrastructure.csproj" />
+  </Folder>
+</Solution>
