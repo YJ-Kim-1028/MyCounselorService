@@ -1,0 +1,6 @@
+@MyCounselorService_HostAddress = http://localhost:5062
+
+GET {{MyCounselorService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
